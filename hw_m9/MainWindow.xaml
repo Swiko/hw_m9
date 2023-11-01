@@ -14,24 +14,78 @@
         </LinearGradientBrush>
     </Window.Background>
 
-    <Grid Margin="0,10,0,10" ShowGridLines="True" HorizontalAlignment="Center" Width="477">
+    <Grid Margin="10" ShowGridLines="false" HorizontalAlignment="Center" Width="477" >
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="6*" />
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="1" Margin="10,10,300,10">
-            <TextBlock Width="Auto" Height="Auto" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center">Input your sentence</TextBlock>
-            <TextBox x:Name="TextBox_Task1" Height="100" Margin="10" TextWrapping="Wrap" />
-            <Button x:Name="Expand" Height="Auto" Margin="10" Content="Expand sentence" Click="Button_Click"/>
+        <TextBlock Grid.Row="0" Margin="5" 
+                   Text="Expander .t1" 
+                   Background="{x:Null}" 
+                   FontFamily="Cascadia Mono SemiLight" 
+                   Foreground="White" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   FontWeight="Bold" 
+                   FontSize="16"/>
+
+        <StackPanel Orientation="Vertical" Margin="5" Grid.Row="2" >
+
+            <TextBlock Text="Input your sentence here"
+                       Margin="5" 
+                       FontFamily="Cascadia Code" 
+                       Foreground="White"/>
+
+            <TextBox x:Name="TextBoxTask"
+                     Margin="10"
+                     Height="60"                  
+                     Foreground="White" 
+                     Background="{x:Null}"
+                     BorderBrush="{x:Null}" 
+                     FontWeight="Bold" 
+                     SelectionBrush="White" 
+                     SelectionOpacity="2"
+                     TextWrapping="Wrap"/>
+
+            <TextBlock Text="First task result:"
+                       Margin="5"
+                       Foreground="White"
+                       FontFamily="Cascadia Code"/>
+
+            <ListBox x:Name="FirstTaskResult" 
+                     Margin="10"
+                     Height="60"
+                     Background="{x:Null}" 
+                     BorderBrush="{x:Null}"
+                     FontFamily="Cascadia Code" 
+                     Foreground="White" />
+
+            <TextBlock Text="Second task result:"
+                       Margin="5"
+                       Foreground="White"
+                       FontFamily="Cascadia Code"/>
+
+            <Label   x:Name="SecondTaskResult"
+                     Margin="10"
+                     Height="60"
+                     Background="{x:Null}" 
+                     BorderBrush="{x:Null}"
+                     FontFamily="Cascadia Code"
+                     Foreground="White"/>
+
+            <Button x:Name="Expand"
+                    Margin="5"
+                    Height="20"
+                    Content="Expand sentence" 
+                    Click="Button_Click" 
+                    FontFamily="Cascadia Code"
+                    Background="{x:Null}"
+                    BorderBrush="{x:Null}" 
+                    Foreground="White" 
+                    FontWeight="Bold"/>
+
         </StackPanel>
-
-        <ListBox x:Name="Result" Grid.Row="1" Margin="220,10,10,10" />
-
-        <Label Grid.Row="0" Margin="5" HorizontalContentAlignment="Center">Expander .t1</Label>
-
-
-        
     </Grid>
 </Window>

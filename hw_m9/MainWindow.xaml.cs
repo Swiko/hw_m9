@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO.Packaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,14 +31,29 @@ namespace hw_m9
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string sentence = TextBox_Task1.Text;
-            string[] splitted_sentece = sentence.Split(' ');
+            string sentence = TextBoxTask.Text;
+            FirstTaskResult.Items.Clear();
+            FirstTask(sentence);
+            SecondTask(sentence);
+        }
+        
+        private void FirstTask(string StringFromView)
+        {
             
-            foreach(string spl in splitted_sentece)
+            string[] splittedSenteceTask1 = StringFromView.Split(' ');
+
+            foreach (string spl in splittedSenteceTask1)
             {
-                Result.Items.Add(spl);
+                FirstTaskResult.Items.Add(spl);
             }
         }
 
+        private void SecondTask(string StringFromView)
+        {
+            string[] StringFromViewArray = StringFromView.Split(' ');
+            Array.Reverse(StringFromViewArray,0, StringFromViewArray.Length);
+            string StringToView = String.Join(" ", StringFromViewArray);
+            SecondTaskResult.Content = StringToView;
+        }
     }
 }
